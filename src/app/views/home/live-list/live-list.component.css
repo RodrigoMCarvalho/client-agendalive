@@ -1,0 +1,13 @@
+.start {
+  page-break-after: 40px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.estiloFxLayout {
+  padding: 2%;
+}
+
+.card {
+  margin: 0.5%;
+}
