@@ -1,28 +1,69 @@
 <mat-tab-group mat-align-tabs="start" class="start">
-  <mat-tab label="PROXIMAS">
-    <div fxLayout="row" fxLayoutAlign="start center" class="estiloFxLayout">
-      <div class="card">
+  <mat-tab label="REALIZADAS">
+    <div div fxLayout="row wrap" fxLayoutAlign="start center" class="estiloFxLayout">
+      <ng-container class="card" *ngFor="let live of livesPrevius">
 
-        <mat-card class="example-card"
+        <mat-card class="mat-card-live"
           fxFlex="0 1 calc(33.3% - 11px)"
           fxFlex.lt-md="0 1 calc(50% - 11px)"
           fxFlex.lt-sm="100%">
-          <mat-card-header>
 
-          </mat-card-header>
+          <mat-card-title class="mat-card-title-live">
+            <div class="row">
+              <p>
+                <span flFlex="70" fxLayoutAlign="start center" style="font-size: 0.9rem;">{{live.liveName}}</span>
+                <span  fxFlex></span>
+                <span flFlex="30" fxLayoutAlign="end center" style="font-size: 0.7rem;">{{live.liveDate}}</span>
+              </p>
+              <p style="font-size: 0.7rem;">
+                Canal: <span>{{live.channelName}}</span>
+              </p>
+            </div>
+          </mat-card-title>
 
-          <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
+          <!--videos do Youtube-->
+          <mat-card-content fxLayoutAlign="center center">
+           <div>
+            <iframe width="560" height="315" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </div>
           </mat-card-content>
 
         </mat-card>
 
-      </div>
+      </ng-container>
     </div>
   </mat-tab>
-  <mat-tab label="REALIZADAS">Content 2</mat-tab>
+  <mat-tab label="PROXIMAS">
+
+    <ng-container class="card" *ngFor="let live of livesNext">
+
+      <mat-card class="mat-card-live"
+        fxFlex="0 1 calc(33.3% - 11px)"
+        fxFlex.lt-md="0 1 calc(50% - 11px)"
+        fxFlex.lt-sm="100%">
+
+        <mat-card-title class="mat-card-title-live">
+          <div class="row">
+            <p>
+              <span flFlex="70" fxLayoutAlign="start center" style="font-size: 0.9rem;">{{live.liveName}}</span>
+              <span  fxFlex></span>
+              <span flFlex="30" fxLayoutAlign="end center" style="font-size: 0.7rem;">{{live.liveDate}}</span>
+            </p>
+            <p style="font-size: 0.7rem;">
+              Canal: <span>{{live.channelName}}</span>
+            </p>
+          </div>
+        </mat-card-title>
+
+        <!--videos do Youtube-->
+        <mat-card-content fxLayoutAlign="center center">
+         <div>
+          <iframe width="560" height="315" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         </div>
+        </mat-card-content>
+
+      </mat-card>
+
+    </ng-container>
+  </mat-tab>
 </mat-tab-group>
