@@ -5,8 +5,8 @@ export class Live {
   liveName: string;
   channelName: string;
   liveDate: string;
-  liveTime: string;
   liveLink: string;
+  liveTime: string;
   registrationDate: string;
   urlSafe: SafeResourceUrl;
 }
