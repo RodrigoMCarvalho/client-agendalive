@@ -1,6 +1,7 @@
 <mat-tab-group mat-align-tabs="start" class="start">
   <mat-tab label="REALIZADAS">
-    <div div fxLayout="row wrap" fxLayoutAlign="start center" class="estiloFxLayout">
+    <mat-progress-bar *ngIf="!previous" mode="indeterminate"></mat-progress-bar>
+    <div fxLayout="row wrap" fxLayoutAlign="start center" class="estiloFxLayout">
       <ng-container class="card" *ngFor="let live of livesPrevius">
 
         <mat-card class="mat-card-live"
@@ -36,7 +37,8 @@
     </div>
   </mat-tab>
   <mat-tab label="PROXIMAS">
-    <div div fxLayout="row wrap" fxLayoutAlign="start center" class="estiloFxLayout">
+    <mat-progress-bar *ngIf="!next" mode="indeterminate"></mat-progress-bar>
+    <div *ngIf="next" fxLayout="row wrap" fxLayoutAlign="start center" class="estiloFxLayout">
       <ng-container class="card" *ngFor="let live of livesNext">
 
         <mat-card class="mat-card-live"

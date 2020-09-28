@@ -35,8 +35,10 @@ export class LiveFormDialogComponent implements OnInit {
 
     console.log(this.liveForm.value);
     this.liveService.saveLive(this.liveForm.value).subscribe(result => {});
+
     this.dialogRef.close();
     this.liveForm.reset();
+    window.location.reload();
   }
 
   cancel(): void {
